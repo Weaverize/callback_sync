@@ -6,6 +6,7 @@
  * @param {function} callback function(err, data) to callback when correct number of calls is reached
  */
 function syncer(targetCount, callback) {
+	var error = false;
 	var cpt = 0;
 	var values = [];
 	var errors = [];
@@ -14,10 +15,10 @@ function syncer(targetCount, callback) {
 		values.push(value);
 		if (++cpt >= targetCount) {
 			if (values.length > 1 || errors.length > 1) {
-				callback(errors, values);
+				callback((error) ? errors : null, values);
 			}
 			else {
-				callback(error, value);
+				callback((error) ? err : null, value);
 			}
 		}
 	};
