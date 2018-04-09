@@ -1,6 +1,6 @@
 {
   "name": "callback_sync",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Module to synchronize callbacks and aggregate errors and values",
   "main": "index.js",
   "scripts": {
